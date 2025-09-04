@@ -7,6 +7,14 @@ export default async function HomePage() {
   return (
     <>
       <Header />
+      <main style={{ padding: "2rem" }}>
+        <h2>Catálogo de Produtos</h2>
+        <ul>
+          {data.products.map((p: any) => (
+            <li key={p.id}>{p.name} - R$ {p.price}</li>
+          ))}
+        </ul>
+      </main>
     </>
   );
 }
