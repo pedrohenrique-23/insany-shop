@@ -5,6 +5,7 @@ import { GlobalStyle } from "@/styles/global";
 
 // importa o registro do styled-components
 import StyledComponentsRegistry from "@/lib/styled-components";
+import { Header } from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* aqui você garante que styled-components funciona no SSR */}
         <StyledComponentsRegistry>
           <GlobalStyle />
+          <Header />
           {children}
         </StyledComponentsRegistry>
       </body>
